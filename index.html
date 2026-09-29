@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshCart — Grocery Delivery Marketplace</title>
+  <meta name="description" content="FreshCart grocery delivery marketplace. Shop fruit, vegetables, dairy, bakery, and pantry staples.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="index.html" aria-label="FreshCart Homepage">
+        <span class="logo-mark">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fc-logo-bg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10b981"/>
+                <stop offset="50%" stop-color="#059669"/>
+                <stop offset="100%" stop-color="#064e3b"/>
+              </linearGradient>
+              <linearGradient id="fc-logo-sheen" x1="0" y1="0" x2="44" y2="24" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="fc-logo-bezel" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+                <stop offset="60%" stop-color="#ffffff" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#022c22" stop-opacity="0.5"/>
+              </linearGradient>
+              <radialGradient id="fc-logo-citrus" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="35%" stop-color="#fb923c"/>
+                <stop offset="100%" stop-color="#ea580c"/>
+              </radialGradient>
+              <linearGradient id="fc-logo-leaf-lime" x1="21" y1="7" x2="33" y2="17" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#bef264"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+              <linearGradient id="fc-logo-leaf-emerald" x1="16" y1="7" x2="25" y2="19" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#86efac"/>
+                <stop offset="100%" stop-color="#15803d"/>
+              </linearGradient>
+              <linearGradient id="fc-logo-basket" x1="10" y1="19.5" x2="34" y2="35.5" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="50%" stop-color="#f0fdf4"/>
+                <stop offset="100%" stop-color="#dcfce7"/>
+              </linearGradient>
+              <filter id="fc-logo-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#022c22" flood-opacity="0.3"/>
+              </filter>
+            </defs>
+            <rect width="44" height="44" rx="13" fill="url(#fc-logo-bg)"/>
+            <path d="M0 13C0 5.82 5.82 0 13 0H31C38.18 0 44 5.82 44 13V18C30 22 14 17 0 23V13Z" fill="url(#fc-logo-sheen)"/>
+            <g filter="url(#fc-logo-shadow)">
+              <circle cx="28.5" cy="19.5" r="5.5" fill="url(#fc-logo-citrus)"/>
+              <ellipse cx="27" cy="17.5" rx="1.4" ry="0.9" fill="#ffffff" fill-opacity="0.8" transform="rotate(-30 27 17.5)"/>
+              <path d="M21 17C21 11.5 26.5 7.2 32.5 6.8C32 12.8 27.2 17 21 17Z" fill="url(#fc-logo-leaf-lime)"/>
+              <path d="M20 19C15 13.5 18 7.5 24 7.5C24 13.5 22.5 17 20 19Z" fill="url(#fc-logo-leaf-emerald)"/>
+              <path d="M20 19C21 14.5 24 11.2 27 9" stroke="#14532d" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M16 20V15C16 12 18.5 9.5 21.5 9.5H22.5C25.5 9.5 28 12 28 15V17" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M10 19.5H34L31.5 32.5C31.1 34.3 29.5 35.5 27.6 35.5H16.4C14.5 35.5 12.9 34.3 12.5 32.5L10 19.5Z" fill="url(#fc-logo-basket)"/>
+              <rect x="9" y="18.5" width="26" height="2.5" rx="1.25" fill="#ffffff"/>
+              <path d="M12 24.5H32M13.5 28.5H30.5" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.35"/>
+              <path d="M17.5 21V32M22 21V32M26.5 21V32" stroke="#10b981" stroke-width="1.3" stroke-linecap="round" stroke-opacity="0.3"/>
+              <path d="M10 12.5L11.2 14.5L13.2 15.2L11.2 16L10 18L8.8 16L6.8 15.2L8.8 14.5Z" fill="#fef08a"/>
+              <circle cx="10" cy="15.2" r="0.7" fill="#ffffff"/>
+            </g>
+            <rect x="0.75" y="0.75" width="42.5" height="42.5" rx="12.25" stroke="url(#fc-logo-bezel)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="brand-name">
+            <span class="brand-fresh">Fresh</span><span class="brand-cart">Cart</span>
+          </span>
+          <span class="brand-sub">Marketplace</span>
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="categories.html">Categories</a>
+        <a href="offers.html">Offers</a>
+        <a href="delivery.html">Delivery</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-btn">Login</a>
+        <button class="nav-cart" onclick="openCart()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 7h14l-1 13H6L5 7Z"/>
+            <path d="M9 7a3 3 0 0 1 6 0"/>
+          </svg>
+          Cart
+          <span class="cart-count">0</span>
+        </button>
+        <button class="menu-btn" onclick="toggleMobile()" aria-label="Toggle menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="index.html" class="active" onclick="closeMobile()">Home</a>
+      <a href="products.html" onclick="closeMobile()">Products</a>
+      <a href="categories.html" onclick="closeMobile()">Categories</a>
+      <a href="offers.html" onclick="closeMobile()">Offers</a>
+      <a href="delivery.html" onclick="closeMobile()">Delivery</a>
+      <a href="about.html" onclick="closeMobile()">About</a>
+      <a href="contact.html" onclick="closeMobile()">Contact</a>
+      <a href="dashboard.html" onclick="closeMobile()">Dashboard</a>
+      <button class="mobile-cart" onclick="openCart(); closeMobile()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 7h14l-1 13H6L5 7Z"/>
+          <path d="M9 7a3 3 0 0 1 6 0"/>
+        </svg>
+        Cart <span class="cart-count">0</span>
+      </button>
+      <a href="login.html" class="mobile-login" onclick="closeMobile()">Login</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow">Fresh Delivery Marketplace</span>
+          <h1>Fresh groceries.<br><span>Delivered to you.</span></h1>
+          <p class="hero-text">
+            Shop fruit, vegetables, dairy, bakery, pantry staples and refreshing drinks with a clean and simple grocery experience.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="products.html">Shop Groceries <span class="arrow">→</span></a>
+            <a class="btn btn-secondary" href="categories.html">Explore Categories</a>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <img src="images/hero-main.jpg" alt="Fresh grocery basket" class="hero-main" onerror="this.src='images/fallback.jpg'">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SHOP BY CATEGORY ================= -->
+    <section class="section compact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Shop by Category</h2>
+            <p>Simple aisles for everyday grocery runs.</p>
+          </div>
+          <a class="green-link" href="categories.html">View All →</a>
+        </div>
+        <div class="category-grid">
+          <a class="category" href="products.html?category=Fresh+Produce">
+            <img src="images/category-produce.jpg" alt="Fresh Produce" onerror="this.src='images/fallback.jpg'">
+            <strong>Fresh Produce</strong>
+            <small>Fruit, vegetables &amp; greens</small>
+          </a>
+          <a class="category" href="products.html?category=Dairy+%26+Eggs">
+            <img src="images/category-dairy.jpg" alt="Dairy &amp; Eggs" onerror="this.src='images/fallback.jpg'">
+            <strong>Dairy &amp; Eggs</strong>
+            <small>Milk, yogurt &amp; eggs</small>
+          </a>
+          <a class="category" href="products.html?category=Bakery">
+            <img src="images/category-bakery.jpg" alt="Bakery" onerror="this.src='images/fallback.jpg'">
+            <strong>Bakery</strong>
+            <small>Bread, rolls &amp; baked goods</small>
+          </a>
+          <a class="category" href="products.html?category=Pantry">
+            <img src="images/category-pantry.jpg" alt="Pantry" onerror="this.src='images/fallback.jpg'">
+            <strong>Pantry</strong>
+            <small>Rice, grains &amp; staples</small>
+          </a>
+          <a class="category" href="products.html?category=Beverages">
+            <img src="images/category-beverages.jpg" alt="Beverages" onerror="this.src='images/fallback.jpg'">
+            <strong>Beverages</strong>
+            <small>Juices &amp; refreshing drinks</small>
+          </a>
+          <a class="category" href="products.html?category=Everyday+Essentials">
+            <img src="images/category-essentials.jpg" alt="Everyday Essentials" onerror="this.src='images/fallback.jpg'">
+            <strong>Everyday Essentials</strong>
+            <small>Weekly grocery basics</small>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= POPULAR GROCERY PICKS ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Popular Grocery Picks</h2>
+            <p>Compact visual cards with clear actions.</p>
+          </div>
+          <a class="green-link" href="products.html">See All Products →</a>
+        </div>
+        <div class="visual-grid">
+          <article class="visual-card">
+            <img src="images/photo-28826564.jpg" alt="Fresh Market Vegetables" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Fresh Market Vegetables</h3>
+              <p>Fresh produce for everyday meals.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Fresh+Produce">Shop Now</a>
+              <a href="categories.html">Learn More</a>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-16747109.jpg" alt="Breakfast Dairy" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Breakfast Dairy</h3>
+              <p>Milk and chilled breakfast favourites.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Dairy+%26+Eggs">Shop Now</a>
+              <a href="categories.html">Learn More</a>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-8963960.jpg" alt="Fresh Bakery" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Fresh Bakery</h3>
+              <p>Bread baked for the day.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Bakery">Shop Now</a>
+              <a href="categories.html">Learn More</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MOTION / PROMO ================= -->
+    <section class="section">
+      <div class="container motion-grid">
+        <div class="motion-stage" id="motionStage">
+          <!-- Ambient Glow Orbs -->
+          <div class="motion-glow motion-glow-1"></div>
+          <div class="motion-glow motion-glow-2"></div>
+
+          <!-- Left Info Column -->
+          <div class="motion-content">
+            <span class="motion-live-badge">
+              <span class="live-pulse"></span>
+              Live Highlights
+            </span>
+            <h3 class="motion-heading">Fresh Picks in Motion</h3>
+            <p class="motion-sub">Farm-harvested daily. Tap any item to instantly add to your basket.</p>
+            
+            <div class="motion-features">
+              <span class="motion-feat"><span class="feat-icon">🌱</span> 100% Farm Fresh</span>
+              <span class="motion-feat"><span class="feat-icon">❄️</span> Chilled Delivery</span>
+            </div>
+
+            <div class="motion-speed-pill">
+              <span class="speed-icon">⚡</span>
+              <span>Delivering in <strong>15–25 mins</strong></span>
+            </div>
+          </div>
+
+          <!-- Right Showcase Cards (Staggered Floating Pair) -->
+          <div class="motion-cards-wrap">
+            <!-- Card 1: Crisp Red Apples -->
+            <div class="motion-card motion-card-1" onclick="addToCart(0)" title="Click to add Crisp Red Apples">
+              <div class="motion-card-img-wrap">
+                <img src="images/product-red-apples.jpg" alt="Crisp Red Apples" onerror="this.src='images/fallback.jpg'">
+                <span class="motion-card-tag">🍎 Fresh Pick</span>
+              </div>
+              <div class="motion-card-body">
+                <div class="motion-card-meta">
+                  <span class="motion-card-rating">★ 4.9</span>
+                  <span class="motion-card-weight">1 kg</span>
+                </div>
+                <strong class="motion-card-title">Crisp Red Apples</strong>
+                <div class="motion-card-footer">
+                  <div class="motion-card-pricing">
+                    <span class="motion-card-price">₹149</span>
+                    <span class="motion-card-mrp">₹180</span>
+                  </div>
+                  <button class="motion-add-btn" onclick="event.stopPropagation(); addToCart(0)" aria-label="Add Red Apples to cart">
+                    + Add
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Greek Yogurt Bowl -->
+            <div class="motion-card motion-card-2" onclick="addToCart(10)" title="Click to add Greek Yogurt">
+              <div class="motion-card-img-wrap">
+                <img src="images/product-greek-yogurt.jpg" alt="Greek Yogurt Bowl" onerror="this.src='images/fallback.jpg'">
+                <span class="motion-card-tag">🥛 Chilled Daily</span>
+              </div>
+              <div class="motion-card-body">
+                <div class="motion-card-meta">
+                  <span class="motion-card-rating">★ 4.8</span>
+                  <span class="motion-card-weight">400 g</span>
+                </div>
+                <strong class="motion-card-title">Greek Yogurt</strong>
+                <div class="motion-card-footer">
+                  <div class="motion-card-pricing">
+                    <span class="motion-card-price">₹95</span>
+                    <span class="motion-card-mrp">₹120</span>
+                  </div>
+                  <button class="motion-add-btn" onclick="event.stopPropagation(); addToCart(10)" aria-label="Add Greek Yogurt to cart">
+                    + Add
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="offer-panel">
+          <span class="eyebrow">Weekly Offer</span>
+          <h2>Build a better basket without the clutter.</h2>
+          <p>Clear product imagery, compact cards, simple prices and direct shopping actions.</p>
+          <div class="offer-code">FRESH150</div>
+          <a class="btn btn-primary" href="offers.html">Explore Offers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHY SHOPPERS USE FRESHCART ================= -->
+    <section class="section compact">
+      <div class="container">
+        <div class="section-head center">
+          <div>
+            <h2>Why Shoppers Use FreshCart</h2>
+            <p>Practical features for everyday grocery shopping.</p>
+          </div>
+        </div>
+        <div class="benefit-grid">
+          <div class="benefit">
+            <div class="benefit-icon">🚚</div>
+            <h3>Delivery Windows</h3>
+            <p>Choose a convenient delivery slot.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">🥬</div>
+            <h3>Fresh Selection</h3>
+            <p>Relevant imagery for every grocery aisle.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">🧺</div>
+            <h3>Easy Basket Building</h3>
+            <p>Add products quickly from the cards.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">✓</div>
+            <h3>Clear Checkout</h3>
+            <p>Review quantities and totals before checkout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FRESH PICKS THIS WEEK ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Fresh Picks This Week</h2>
+            <p>Popular grocery items selected for quick shopping.</p>
+          </div>
+          <a class="green-link" href="products.html">Shop All →</a>
+        </div>
+        <div class="visual-grid">
+          <article class="visual-card">
+            <img src="images/photo-6653619.jpg" alt="Red Apples" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Red Apples</h3>
+              <p>Crisp fruit selected for everyday snacking.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html">Shop Now</a>
+              <button onclick="addToCart(0)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-28826564.jpg" alt="Green Vegetables" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Green Vegetables</h3>
+              <p>Fresh greens and vegetables for daily meals.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Fresh+Produce">Shop Now</a>
+              <button onclick="addToCart(4)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-37009052.jpg" alt="Farm Dairy" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Farm Dairy</h3>
+              <p>Milk and chilled favourites kept simple.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Dairy+%26+Eggs">Shop Now</a>
+              <button onclick="addToCart(7)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-7552225.jpg" alt="Greek Yogurt" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Greek Yogurt</h3>
+              <p>Creamy chilled dairy for breakfast and snacks.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Dairy+%26+Eggs">Shop Now</a>
+              <button onclick="addToCart(10)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-9345007.jpg" alt="Sourdough Bread" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Sourdough Bread</h3>
+              <p>Fresh bakery choices for the breakfast table.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Bakery">Shop Now</a>
+              <button onclick="addToCart(12)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-14534512.jpg" alt="Basmati Rice" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Basmati Rice</h3>
+              <p>Everyday pantry staples for family meals.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Pantry">Shop Now</a>
+              <button onclick="addToCart(15)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-14520462.jpg" alt="Orange Juice" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Orange Juice</h3>
+              <p>Refreshing fruit drinks for the fridge.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Beverages">Shop Now</a>
+              <button onclick="addToCart(19)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/photo-18328392.jpg" alt="Fresh Grocery Basket" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Fresh Grocery Basket</h3>
+              <p>A practical mix for weekly shopping.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html">Shop Now</a>
+              <button onclick="addToCart(23)">Add to Cart</button>
+            </div>
+          </article>
+          <article class="visual-card">
+            <img src="images/product-mixed-fruit-smoothie.jpg" alt="Mixed Fruit Smoothie" onerror="this.src='images/fallback.jpg'">
+            <div class="visual-info">
+              <h3>Mixed Fruit Smoothie</h3>
+              <p>Chilled nutrient-rich blend of fresh seasonal fruits.</p>
+            </div>
+            <div class="visual-buttons">
+              <a href="products.html?category=Beverages">Shop Now</a>
+              <button onclick="addToCart(22)">Add to Cart</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <!-- Main Footer Body -->
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Contact Column -->
+        <div class="footer-brand-col">
+          <a class="logo footer-logo" href="index.html" aria-label="FreshCart Homepage">
+            <span class="logo-mark">
+              <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="44" height="44" rx="13" fill="url(#fc-logo-bg)"/>
+                <path d="M0 13C0 5.82 5.82 0 13 0H31C38.18 0 44 5.82 44 13V18C30 22 14 17 0 23V13Z" fill="url(#fc-logo-sheen)"/>
+                <g filter="url(#fc-logo-shadow)">
+                  <circle cx="28.5" cy="19.5" r="5.5" fill="url(#fc-logo-citrus)"/>
+                  <ellipse cx="27" cy="17.5" rx="1.4" ry="0.9" fill="#ffffff" fill-opacity="0.8" transform="rotate(-30 27 17.5)"/>
+                  <path d="M21 17C21 11.5 26.5 7.2 32.5 6.8C32 12.8 27.2 17 21 17Z" fill="url(#fc-logo-leaf-lime)"/>
+                  <path d="M20 19C15 13.5 18 7.5 24 7.5C24 13.5 22.5 17 20 19Z" fill="url(#fc-logo-leaf-emerald)"/>
+                  <path d="M20 19C21 14.5 24 11.2 27 9" stroke="#14532d" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                  <path d="M16 20V15C16 12 18.5 9.5 21.5 9.5H22.5C25.5 9.5 28 12 28 15V17" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M10 19.5H34L31.5 32.5C31.1 34.3 29.5 35.5 27.6 35.5H16.4C14.5 35.5 12.9 34.3 12.5 32.5L10 19.5Z" fill="url(#fc-logo-basket)"/>
+                  <rect x="9" y="18.5" width="26" height="2.5" rx="1.25" fill="#ffffff"/>
+                  <path d="M12 24.5H32M13.5 28.5H30.5" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.35"/>
+                  <path d="M17.5 21V32M22 21V32M26.5 21V32" stroke="#10b981" stroke-width="1.3" stroke-linecap="round" stroke-opacity="0.3"/>
+                  <path d="M10 12.5L11.2 14.5L13.2 15.2L11.2 16L10 18L8.8 16L6.8 15.2L8.8 14.5Z" fill="#fef08a"/>
+                  <circle cx="10" cy="15.2" r="0.7" fill="#ffffff"/>
+                </g>
+                <rect x="0.75" y="0.75" width="42.5" height="42.5" rx="12.25" stroke="url(#fc-logo-bezel)" stroke-width="1.5" fill="none"/>
+              </svg>
+            </span>
+            <span class="logo-text">
+              <span class="brand-name">
+                <span class="brand-fresh">Fresh</span><span class="brand-cart">Cart</span>
+              </span>
+              <span class="brand-sub">Marketplace</span>
+            </span>
+          </a>
+          <p class="footer-desc">
+            Your neighborhood online grocery marketplace. Delivering harvest-fresh fruits, vegetables, dairy, bakery, and pantry staples every single day.
+          </p>
+
+          <div class="footer-contact-info">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><strong>1800-123-FRESH</strong> (Toll Free · 7 AM – 11 PM)</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>support@freshcart.com</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" aria-label="Instagram" onclick="event.preventDefault(); toast('Opening FreshCart Instagram')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" aria-label="Facebook" onclick="event.preventDefault(); toast('Opening FreshCart Facebook')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)" onclick="event.preventDefault(); toast('Opening FreshCart on X')">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" onclick="event.preventDefault(); toast('Opening FreshCart LinkedIn')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" aria-label="YouTube" onclick="event.preventDefault(); toast('Opening FreshCart YouTube')">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Fresh Aisles -->
+        <div>
+          <h3 class="footer-heading">Fresh Aisles</h3>
+          <div class="footer-links">
+            <a href="products.html?category=Fresh+Produce">Fresh Produce &amp; Fruits</a>
+            <a href="products.html?category=Dairy+%26+Eggs">Dairy, Milk &amp; Eggs</a>
+            <a href="products.html?category=Bakery">Artisan Breads &amp; Bakery</a>
+            <a href="products.html?category=Pantry">Pantry Staples &amp; Grains</a>
+            <a href="products.html?category=Beverages">Cold Pressed Juices</a>
+            <a href="products.html?category=Everyday+Essentials">Everyday Essentials</a>
+            <a href="categories.html" class="footer-link-highlight">All Categories →</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Quick Links -->
+        <div>
+          <h3 class="footer-heading">Quick Links</h3>
+          <div class="footer-links">
+            <a href="products.html">Browse All Products</a>
+            <a href="offers.html">Weekly Deals &amp; Coupons</a>
+            <a href="delivery.html">Delivery Slots &amp; Zones</a>
+            <a href="about.html">About FreshCart Story</a>
+            <a href="dashboard.html">Order History &amp; Reorder</a>
+            <a href="dashboard.html">Track Active Order</a>
+            <a href="login.html">Sign In / Register</a>
+          </div>
+        </div>
+
+        <!-- Column 4: Customer Care -->
+        <div>
+          <h3 class="footer-heading">Customer Care</h3>
+          <div class="footer-links">
+            <a href="contact.html">Help Center &amp; FAQs</a>
+            <a href="contact.html">Order Support</a>
+            <a href="delivery.html">Shipping Guidelines</a>
+            <a href="contact.html">Refund &amp; Returns Policy</a>
+            <a href="contact.html">Terms of Service</a>
+            <a href="contact.html">Privacy Policy</a>
+            <a href="contact.html">Share Feedback</a>
+          </div>
+        </div>
+
+        <!-- Column 5: Newsletter & Payments -->
+        <div class="footer-newsletter-col">
+          <h3 class="footer-heading">Get Weekly Deals</h3>
+          <p class="footer-newsletter-desc">Subscribe for harvest alerts and ₹150 off your first order.</p>
+          <form class="footer-newsletter-form" onsubmit="event.preventDefault(); toast('Subscribed! Check your inbox for ₹150 coupon.'); this.reset();">
+            <div class="newsletter-input-wrap">
+              <input type="email" placeholder="Enter your email" required aria-label="Email address for deals">
+              <button type="submit">Join</button>
+            </div>
+          </form>
+
+          <div class="footer-payment-section">
+            <span class="payment-title">100% Secure Payments</span>
+            <div class="payment-badges">
+              <span class="pay-badge">UPI</span>
+              <span class="pay-badge">VISA</span>
+              <span class="pay-badge">Mastercard</span>
+              <span class="pay-badge">RuPay</span>
+              <span class="pay-badge">COD</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <span>© 2026 FreshCart Marketplace Inc. All rights reserved.</span>
+          <span class="footer-bottom-badge">🔒 256-Bit SSL Encrypted</span>
+        </div>
+        <div class="footer-legal-links">
+          <a href="contact.html">Privacy</a>
+          <span>·</span>
+          <a href="contact.html">Terms</a>
+          <span>·</span>
+          <a href="delivery.html">Shipping</a>
+          <span>·</span>
+          <a href="contact.html">Security</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= CART MODAL ================= -->
+  <div id="cartModal" class="cart-modal">
+    <div class="cart-box">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <button class="close" onclick="closeCart()" aria-label="Close cart">&times;</button>
+      </div>
+      <div id="cartBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification & Scroll to top -->
+  <div id="toast" class="toast"></div>
+  <button id="backTop" class="back-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

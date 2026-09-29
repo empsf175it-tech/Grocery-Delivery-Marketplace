@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard — FreshCart</title>
+  <meta name="description" content="View your active grocery orders, delivery history, saved addresses and favorite items.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div class="dashboard">
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
+      <a class="logo" href="index.html" aria-label="FreshCart Homepage">
+        <span class="logo-mark">
+          <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="fc-dash-bg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#10b981"/>
+                <stop offset="50%" stop-color="#059669"/>
+                <stop offset="100%" stop-color="#064e3b"/>
+              </linearGradient>
+              <linearGradient id="fc-dash-sheen" x1="0" y1="0" x2="44" y2="24" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="fc-dash-bezel" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+                <stop offset="60%" stop-color="#ffffff" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#022c22" stop-opacity="0.5"/>
+              </linearGradient>
+              <radialGradient id="fc-dash-citrus" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="35%" stop-color="#fb923c"/>
+                <stop offset="100%" stop-color="#ea580c"/>
+              </radialGradient>
+              <linearGradient id="fc-dash-leaf-lime" x1="21" y1="7" x2="33" y2="17" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#bef264"/>
+                <stop offset="100%" stop-color="#22c55e"/>
+              </linearGradient>
+              <linearGradient id="fc-dash-leaf-emerald" x1="16" y1="7" x2="25" y2="19" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#86efac"/>
+                <stop offset="100%" stop-color="#15803d"/>
+              </linearGradient>
+              <linearGradient id="fc-dash-basket" x1="10" y1="19.5" x2="34" y2="35.5" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="50%" stop-color="#f0fdf4"/>
+                <stop offset="100%" stop-color="#dcfce7"/>
+              </linearGradient>
+              <filter id="fc-dash-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#022c22" flood-opacity="0.3"/>
+              </filter>
+            </defs>
+            <rect width="44" height="44" rx="13" fill="url(#fc-dash-bg)"/>
+            <path d="M0 13C0 5.82 5.82 0 13 0H31C38.18 0 44 5.82 44 13V18C30 22 14 17 0 23V13Z" fill="url(#fc-dash-sheen)"/>
+            <g filter="url(#fc-dash-shadow)">
+              <circle cx="28.5" cy="19.5" r="5.5" fill="url(#fc-dash-citrus)"/>
+              <ellipse cx="27" cy="17.5" rx="1.4" ry="0.9" fill="#ffffff" fill-opacity="0.8" transform="rotate(-30 27 17.5)"/>
+              <path d="M21 17C21 11.5 26.5 7.2 32.5 6.8C32 12.8 27.2 17 21 17Z" fill="url(#fc-dash-leaf-lime)"/>
+              <path d="M20 19C15 13.5 18 7.5 24 7.5C24 13.5 22.5 17 20 19Z" fill="url(#fc-dash-leaf-emerald)"/>
+              <path d="M20 19C21 14.5 24 11.2 27 9" stroke="#14532d" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+              <path d="M16 20V15C16 12 18.5 9.5 21.5 9.5H22.5C25.5 9.5 28 12 28 15V17" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M10 19.5H34L31.5 32.5C31.1 34.3 29.5 35.5 27.6 35.5H16.4C14.5 35.5 12.9 34.3 12.5 32.5L10 19.5Z" fill="url(#fc-dash-basket)"/>
+              <rect x="9" y="18.5" width="26" height="2.5" rx="1.25" fill="#ffffff"/>
+              <path d="M12 24.5H32M13.5 28.5H30.5" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.35"/>
+              <path d="M17.5 21V32M22 21V32M26.5 21V32" stroke="#10b981" stroke-width="1.3" stroke-linecap="round" stroke-opacity="0.3"/>
+              <path d="M10 12.5L11.2 14.5L13.2 15.2L11.2 16L10 18L8.8 16L6.8 15.2L8.8 14.5Z" fill="#fef08a"/>
+              <circle cx="10" cy="15.2" r="0.7" fill="#ffffff"/>
+            </g>
+            <rect x="0.75" y="0.75" width="42.5" height="42.5" rx="12.25" stroke="url(#fc-dash-bezel)" stroke-width="1.5" fill="none"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <span class="brand-name">
+            <span class="brand-fresh">Fresh</span><span class="brand-cart">Cart</span>
+          </span>
+          <span class="brand-sub">Marketplace</span>
+        </span>
+      </a>
+
+      <nav class="sidebar-nav">
+        <button class="active" data-view="overview" onclick="switchDashboardView('overview')">Overview</button>
+        <button data-view="orders" onclick="switchDashboardView('orders')">Orders</button>
+        <button data-view="addresses" onclick="switchDashboardView('addresses')">Addresses</button>
+        <button data-view="favorites" onclick="switchDashboardView('favorites')">Favorites</button>
+        <button data-view="support" onclick="switchDashboardView('support')">Support</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <a class="btn btn-primary" href="login.html">Logout</a>
+      </div>
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="dashboard-main">
+      <div class="dashboard-top">
+        <div class="dashboard-menu">
+          <button class="nav-cart" onclick="toggleDashboardMobileMenu()" aria-label="Toggle Dashboard Menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+          <div id="dashboardMobile" class="dashboard-mobile">
+            <!-- Brand Logo & Name inside Hamburger Menu -->
+            <div class="dashboard-mobile-brand">
+              <a class="logo dashboard-menu-logo" href="index.html" aria-label="FreshCart Homepage">
+                <span class="logo-mark">
+                  <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="fc-mob-bg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#10b981"/>
+                        <stop offset="50%" stop-color="#059669"/>
+                        <stop offset="100%" stop-color="#064e3b"/>
+                      </linearGradient>
+                      <linearGradient id="fc-mob-sheen" x1="0" y1="0" x2="44" y2="24" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                      </linearGradient>
+                      <linearGradient id="fc-mob-bezel" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+                        <stop offset="60%" stop-color="#ffffff" stop-opacity="0.12"/>
+                        <stop offset="100%" stop-color="#022c22" stop-opacity="0.5"/>
+                      </linearGradient>
+                      <radialGradient id="fc-mob-citrus" cx="35%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#fef08a"/>
+                        <stop offset="35%" stop-color="#fb923c"/>
+                        <stop offset="100%" stop-color="#ea580c"/>
+                      </radialGradient>
+                      <linearGradient id="fc-mob-leaf-lime" x1="21" y1="7" x2="33" y2="17" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#bef264"/>
+                        <stop offset="100%" stop-color="#22c55e"/>
+                      </linearGradient>
+                      <linearGradient id="fc-mob-leaf-emerald" x1="16" y1="7" x2="25" y2="19" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#86efac"/>
+                        <stop offset="100%" stop-color="#15803d"/>
+                      </linearGradient>
+                      <linearGradient id="fc-mob-basket" x1="10" y1="19.5" x2="34" y2="35.5" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#ffffff"/>
+                        <stop offset="50%" stop-color="#f0fdf4"/>
+                        <stop offset="100%" stop-color="#dcfce7"/>
+                      </linearGradient>
+                      <filter id="fc-mob-shadow" x="-10%" y="-10%" width="120%" height="130%">
+                        <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#022c22" flood-opacity="0.3"/>
+                      </filter>
+                    </defs>
+                    <rect width="44" height="44" rx="13" fill="url(#fc-mob-bg)"/>
+                    <path d="M0 13C0 5.82 5.82 0 13 0H31C38.18 0 44 5.82 44 13V18C30 22 14 17 0 23V13Z" fill="url(#fc-mob-sheen)"/>
+                    <g filter="url(#fc-mob-shadow)">
+                      <circle cx="28.5" cy="19.5" r="5.5" fill="url(#fc-mob-citrus)"/>
+                      <ellipse cx="27" cy="17.5" rx="1.4" ry="0.9" fill="#ffffff" fill-opacity="0.8" transform="rotate(-30 27 17.5)"/>
+                      <path d="M21 17C21 11.5 26.5 7.2 32.5 6.8C32 12.8 27.2 17 21 17Z" fill="url(#fc-mob-leaf-lime)"/>
+                      <path d="M20 19C15 13.5 18 7.5 24 7.5C24 13.5 22.5 17 20 19Z" fill="url(#fc-mob-leaf-emerald)"/>
+                      <path d="M20 19C21 14.5 24 11.2 27 9" stroke="#14532d" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                      <path d="M16 20V15C16 12 18.5 9.5 21.5 9.5H22.5C25.5 9.5 28 12 28 15V17" stroke="#ffffff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      <path d="M10 19.5H34L31.5 32.5C31.1 34.3 29.5 35.5 27.6 35.5H16.4C14.5 35.5 12.9 34.3 12.5 32.5L10 19.5Z" fill="url(#fc-mob-basket)"/>
+                      <rect x="9" y="18.5" width="26" height="2.5" rx="1.25" fill="#ffffff"/>
+                      <path d="M12 24.5H32M13.5 28.5H30.5" stroke="#10b981" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.35"/>
+                      <path d="M17.5 21V32M22 21V32M26.5 21V32" stroke="#10b981" stroke-width="1.3" stroke-linecap="round" stroke-opacity="0.3"/>
+                      <path d="M10 12.5L11.2 14.5L13.2 15.2L11.2 16L10 18L8.8 16L6.8 15.2L8.8 14.5Z" fill="#fef08a"/>
+                      <circle cx="10" cy="15.2" r="0.7" fill="#ffffff"/>
+                    </g>
+                    <rect x="0.75" y="0.75" width="42.5" height="42.5" rx="12.25" stroke="url(#fc-mob-bezel)" stroke-width="1.5" fill="none"/>
+                  </svg>
+                </span>
+                <span class="logo-text">
+                  <span class="brand-name">
+                    <span class="brand-fresh">Fresh</span><span class="brand-cart">Cart</span>
+                  </span>
+                  <span class="brand-sub">Marketplace</span>
+                </span>
+              </a>
+            </div>
+            <div class="dashboard-mobile-nav">
+              <button class="active" data-view="overview" onclick="switchDashboardView('overview')">Overview</button>
+              <button data-view="orders" onclick="switchDashboardView('orders')">Orders</button>
+              <button data-view="addresses" onclick="switchDashboardView('addresses')">Addresses</button>
+              <button data-view="favorites" onclick="switchDashboardView('favorites')">Favorites</button>
+              <button data-view="support" onclick="switchDashboardView('support')">Support</button>
+              <a href="products.html" class="dashboard-mobile-shop">Shop Groceries</a>
+              <a href="login.html" class="dashboard-mobile-logout">Logout</a>
+            </div>
+          </div>
+        </div>
+
+        <strong>Customer Dashboard</strong>
+        <a class="btn btn-primary" href="products.html">Shop Groceries</a>
+      </div>
+
+      <div id="dashboardContent" class="dashboard-content">
+        <!-- Default: Overview -->
+        <div class="welcome">
+          <div>
+            <h1>Hello, Shopper</h1>
+            <p>Welcome back. Here is your grocery activity.</p>
+          </div>
+          <a class="btn btn-primary" href="products.html">Shop Groceries</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <small>Active Orders</small>
+            <strong>2</strong>
+          </div>
+          <div class="stat">
+            <small>Delivered</small>
+            <strong>14</strong>
+          </div>
+          <div class="stat">
+            <small>Saved Items</small>
+            <strong>8</strong>
+          </div>
+          <div class="stat">
+            <small>Basket Value</small>
+            <strong>₹1,286</strong>
+          </div>
+        </div>
+
+        <div class="dashboard-panels">
+          <div class="dashboard-card">
+            <h2>Recent Orders</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#FC-1048</td>
+                    <td>12 items</td>
+                    <td>₹1,286</td>
+                    <td><span class="status">Out for Delivery</span></td>
+                  </tr>
+                  <tr>
+                    <td>#FC-1032</td>
+                    <td>17 items</td>
+                    <td>₹1,842</td>
+                    <td><span class="status">Delivered</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <h2>Delivery Snapshot</h2>
+            <img src="images/delivery-feature.jpg" alt="Fresh grocery delivery" onerror="this.src='images/fallback.jpg'">
+            <p class="muted" style="margin-top:10px;">Your current order is being prepared for the evening slot.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="dashboard-footer">
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span>© 2026 <strong>FreshCart</strong> Marketplace Inc.</span>
+          <span style="opacity: 0.4;">•</span>
+          <span style="display: inline-flex; align-items: center; gap: 5px; color: #059669; font-weight: 750; font-size: 11.5px; background: rgba(16, 185, 129, 0.1); padding: 3px 9px; border-radius: 999px;">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 256-bit SSL Secured
+          </span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+          <a href="index.html">Storefront</a>
+          <a href="products.html">Browse Aisles</a>
+          <a href="delivery.html">Delivery Policy</a>
+          <a href="contact.html">Customer Care</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function toggleDashboardMobileMenu() {
+      document.getElementById("dashboardMobile")?.classList.toggle("open");
+    }
+
+    // Close dashboard mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      const menu = document.getElementById("dashboardMobile");
+      const btn = document.querySelector(".dashboard-menu .nav-cart");
+      if (menu && menu.classList.contains("open")) {
+        if (!menu.contains(e.target) && !btn?.contains(e.target)) {
+          menu.classList.remove("open");
+        }
+      }
+    });
+
+    function switchDashboardView(view, button) {
+      document.getElementById("dashboardMobile")?.classList.remove("open");
+      const box = document.getElementById("dashboardContent");
+      if (!box) return;
+
+      if (view === "orders") {
+        box.innerHTML = `
+          <div class="welcome">
+            <div>
+              <h1>Orders</h1>
+              <p>Track current and previous grocery baskets.</p>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#FC-1048</td>
+                    <td>12 items</td>
+                    <td>₹1,286</td>
+                    <td><span class="status">Out for Delivery</span></td>
+                  </tr>
+                  <tr>
+                    <td>#FC-1032</td>
+                    <td>17 items</td>
+                    <td>₹1,842</td>
+                    <td><span class="status">Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td>#FC-1019</td>
+                    <td>9 items</td>
+                    <td>₹946</td>
+                    <td><span class="status">Delivered</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      } else if (view === "addresses") {
+        box.innerHTML = `
+          <div class="welcome">
+            <div>
+              <h1>Addresses</h1>
+              <p>Keep delivery locations organized.</p>
+            </div>
+          </div>
+          <div class="benefit-grid">
+            <div class="benefit">
+              <img src="images/address-home.jpg" alt="Home address" class="product-image" onerror="this.src='images/fallback.jpg'">
+              <h3>Home</h3>
+              <p>Flat 4B, Green Avenue<br>Hyderabad, Telangana</p>
+            </div>
+            <div class="benefit">
+              <img src="images/address-work.jpg" alt="Work address" class="product-image" onerror="this.src='images/fallback.jpg'">
+              <h3>Work</h3>
+              <p>Business Park, Central Road<br>Hyderabad, Telangana</p>
+            </div>
+          </div>
+        `;
+      } else if (view === "favorites") {
+        box.innerHTML = `
+          <div class="welcome">
+            <div>
+              <h1>Favorites</h1>
+              <p>Products saved for quick shopping.</p>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <img src="images/favorite-yogurt.jpg" alt="Greek Yogurt favorite" onerror="this.src='images/fallback.jpg'">
+            <h2 style="margin-top:12px">Greek Yogurt</h2>
+            <p class="muted">A saved dairy favourite for quick reordering.</p>
+            <a class="btn btn-primary" href="products.html" style="margin-top:10px;">Shop Products</a>
+          </div>
+        `;
+      } else if (view === "support") {
+        box.innerHTML = `
+          <div class="welcome">
+            <div>
+              <h1>Support</h1>
+              <p>Get help with orders and delivery.</p>
+            </div>
+            <a class="btn btn-primary" href="contact.html">Contact Support</a>
+          </div>
+          <div class="faq">
+            <details open>
+              <summary>Where is my order?</summary>
+              <p class="muted" style="margin-top:8px;">Open the Orders tab to view the latest real-time dispatch and delivery status.</p>
+            </details>
+            <details>
+              <summary>Can I report an issue with received groceries?</summary>
+              <p class="muted" style="margin-top:8px;">Yes, visit our Contact page or call customer support with your Order ID (#FC-XXXX).</p>
+            </details>
+            <details>
+              <summary>How do I change my scheduled delivery slot?</summary>
+              <p class="muted" style="margin-top:8px;">You can reschedule any order that has not yet entered 'Out for Delivery' status.</p>
+            </details>
+          </div>
+        `;
+      } else {
+        // Overview
+        box.innerHTML = `
+          <div class="welcome">
+            <div>
+              <h1>Hello, Shopper</h1>
+              <p>Welcome back. Here is your grocery activity.</p>
+            </div>
+            <a class="btn btn-primary" href="products.html">Shop Groceries</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <small>Active Orders</small>
+              <strong>2</strong>
+            </div>
+            <div class="stat">
+              <small>Delivered</small>
+              <strong>14</strong>
+            </div>
+            <div class="stat">
+              <small>Saved Items</small>
+              <strong>8</strong>
+            </div>
+            <div class="stat">
+              <small>Basket Value</small>
+              <strong>₹1,286</strong>
+            </div>
+          </div>
+
+          <div class="dashboard-panels">
+            <div class="dashboard-card">
+              <h2>Recent Orders</h2>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Order</th>
+                      <th>Items</th>
+                      <th>Total</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#FC-1048</td>
+                      <td>12 items</td>
+                      <td>₹1,286</td>
+                      <td><span class="status">Out for Delivery</span></td>
+                    </tr>
+                    <tr>
+                      <td>#FC-1032</td>
+                      <td>17 items</td>
+                      <td>₹1,842</td>
+                      <td><span class="status">Delivered</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="dashboard-card">
+              <h2>Delivery Snapshot</h2>
+              <img src="images/delivery-feature.jpg" alt="Fresh grocery delivery" onerror="this.src='images/fallback.jpg'">
+              <p class="muted" style="margin-top:10px;">Your current order is being prepared for the evening slot.</p>
+            </div>
+          </div>
+        `;
+      }
+
+      document.querySelectorAll(".sidebar-nav button, .dashboard-mobile-nav button").forEach(b => {
+        if (b.getAttribute("data-view") === view) {
+          b.classList.add("active");
+        } else {
+          b.classList.remove("active");
+        }
+      });
+      document.getElementById("dashboardMobile")?.classList.remove("open");
+    }
+  </script>
+</body>
+</html>
