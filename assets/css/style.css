@@ -1670,6 +1670,9 @@ img {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.35s ease;
@@ -3586,26 +3589,24 @@ tbody tr:hover .status {
 
   .visual-grid,
   .offer-grid,
-  .benefit-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .benefit-grid,
   .benefit-grid.three-col,
   .benefit-grid.two-by-two {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .visual-grid > :nth-child(odd):last-child,
   .offer-grid > :nth-child(odd):last-child,
-  .product-grid > :nth-child(odd):last-child {
+  .product-grid > :nth-child(odd):last-child,
+  .benefit-grid > :nth-child(odd):last-child,
+  .benefit-grid.three-col > :nth-child(odd):last-child,
+  .benefit-grid.two-by-two > :nth-child(odd):last-child {
     grid-column: auto;
     justify-self: stretch;
     width: 100%;
   }
 
-  /* Center the last card in 2-column benefit and category grids on mobile */
-  .benefit-grid.three-col > :nth-child(odd):last-child,
-  .benefit-grid > :nth-child(odd):last-child,
+  /* Center the last card in 2-column category grid on mobile */
   .category-grid > :nth-child(odd):last-child {
     grid-column: 1 / -1;
     justify-self: center;
